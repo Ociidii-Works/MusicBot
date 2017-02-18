@@ -1770,7 +1770,7 @@ class MusicBot(discord.Client):
         # Deafen the bot on join
         log.info("Deafening self in {}/{}".format(channel.server, channel))
         # await self.deafen_voice_client(author.voice_channel, True)
-        await self.set_voice_state(author.voice_channel, False, True)
+        await self.set_voice_state(author.voice_channel, mute=False, deaf=True)
 
         if player.is_stopped:
             player.play()
